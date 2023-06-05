@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .align{
+            text-align: center;
+        }
+        .box1{
+            height: 800px;
+            width: 600px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            margin: auto;
+        }
+        .box2{
+            height: 13%;
+            width: 80%;
+            margin: auto ;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            border-radius:10px ;
+        }
+        #show{
+            display: flex;
+            margin: 60px;
+        }
+        #show>div{
+            height: 100px;
+            width: 100px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            text-align: center;
+            border-radius: 10px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body class="align">
+    <h1 style="color: teal;font-size: 100px;">Masai Calculator</h1>
+    <div class="box1">
+        <div class="box2"></div>
+        <div id="show">
+            <div><h1>1</h1></div>
+            <div><h1>2</h1></div>
+            <div><h1>3</h1></div>
+            <div style="color: aliceblue; background-color: black;"><h1>+</h1></div>
+        </div>
+
+        <div id="show">
+            <div><h1>4</h1></div>
+            <div><h1>5</h1></div>
+            <div><h1>6</h1></div>
+            <div style="color: aliceblue; background-color: black;"><h1>-</h1></div>
+        </div>
+
+        <div id="show">
+            <div><h1>7</h1></div>
+            <div><h1>8</h1></div>
+            <div><h1>9</h1></div>
+            <div style="color: aliceblue; background-color: black;"><h1>x</h1></div>
+        </div>
+
+        <div id="show">
+            <div style="color: aliceblue; background-color: red;"><h1>C</h1></div>
+            <div><h1>0</h1></div>
+            <div style="color: aliceblue; background-color: black;"><h1>=</h1></div>
+            <div style="color: aliceblue; background-color: black;"><h1>/</h1></div>
+        </div>
+
+    </div>
+</body>
+</html>
