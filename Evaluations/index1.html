@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .grandfather{
+            width: 1300px;
+            height: 700px;
+            border: 1px dashed black;
+            margin: auto;
+            display: flex;
+        }
+        .father{
+            width: 600px;
+            height: 600px;
+            border: 1px dashed black;
+            margin:auto;
+        }
+        .uncle{
+            width: 600px;
+            height: 600px;
+            border: 1px dashed black;
+            margin: auto;
+            text-align: center;
+        }
+        .person1{
+            width: 300px;
+            height: 500px;
+            border: 1px dashed black;
+            margin: 10px 30px;
+        }
+        .person2{
+            width: 500px;
+            height: 50px;
+            border: 1px dashed black;
+            margin: 20px 45px;
+            text-align: center;
+        }
+        .children1{
+            width: 80px;
+            height: 450px;
+            border: 1px solid black;
+            margin: 10px;
+
+        }
+        .children2{
+            width: 450px;
+            height: 40px;
+            border: 1px solid black;
+            margin: 20px;
+
+        }
+        .num1{
+            width: 50px;
+            height: 50px;
+            border: 1px dotted black;
+            text-align: center;
+            font-size: 30px;
+            margin: 10px;
+        }
+        .child{
+            width: 400px;
+            height: 30px;
+            border: 1px dashed black;
+            margin: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="grandfather">
+        <p>Grandfather</p>
+
+        <div class="father">
+            <p>Father</p>
+
+            <div class="person1">
+                Person-1
+                <div style="display: flex;">
+                    <div class="children1" style="margin-left: 50px;">Child-1</div>
+                    <div class="children1">Child-2</div>
+                    <div class="children1">
+                       <div>Child-3
+                        <div class="num1">1</div>
+                        <div class="num1">2</div>
+                        <div class="num1">3</div>
+                       </div> 
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="uncle">
+            <p>Uncle</p>
+
+            <div class="person2">Person-1</div>
+
+            <div class="person2" style="height: 350px;">Person-2
+                <div class="children2">Child-1</div>
+                <div class="children2" style="height: 180px;">
+                    <div>
+                        Child-2
+                        <div class="child" style="background-color: orange;"><div style="color: black;font-size: 30px;">1</div></div>
+                        <div class="child"><div><div style="color: blue;font-size: 30px;">2</div></div></div>
+                        <div class="child" style="background-color: green;"><div><div style="color: black;font-size: 30px;">3</div></div></div>
+                    </div>
+                </div>
+                <div class="children2">Child-3</div>
+            </div>
+
+            <div class="person2">Person-3</div>
+
+        </div>
+        
+    </div>
+
+</body>
+</html>
