@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FLEX GALLERY</title>
+    <style>
+        .c{
+            background-color: #3d415c;
+            display: flex;
+            width: 90%;
+            height: 80px;
+            margin: auto;
+            color: white;
+            padding-left: 20px;
+            padding-right: 20px;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .c>.x{
+            display: flex;
+            justify-content: space-around;
+            width: 300px;
+            font-size: 20px;
+        }
+        .c>div:nth-child(1){
+            color: black;
+            font-size: 35px;
+            margin-left: 40px;
+        }
+        .c>div>a{
+            color: white;
+            text-decoration: none;
+        }
+        .c+h2{
+            color: red;
+            text-align: center;
+        }
+        .d{
+            display: flex;
+            flex-wrap: wrap;
+            width: 80%;
+            margin: auto;
+            margin-top: 30px;
+            margin-right: 140px;
+        }
+        .d>img{
+            width: 30%;
+            margin: auto;
+            margin-bottom: 30px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="c">
+        <div>masai</div>
+        <div class="x">
+            <a href="">HOME</a>
+            <a href="">GALLERY</a> 
+            <a href="">ABOUT</a>
+        </div>
+    </div>
+    <h2>PHOTO GALLERY</h2>
+    <div class="d">
+        <img src="https://preview.colorlib.com/theme/pentax/img/project/1.jpg.webp" alt="">
+        <img src="https://preview.colorlib.com/theme/pentax/img/project/1.jpg.webp" alt="">
+        <img src="https://preview.colorlib.com/theme/pentax/img/project/1.jpg.webp" alt="">
+        <img src="https://preview.colorlib.com/theme/pentax/img/project/1.jpg.webp" alt="">
+        <img src="https://preview.colorlib.com/theme/pentax/img/project/1.jpg.webp" alt="">
+        <img src="https://preview.colorlib.com/theme/pentax/img/project/1.jpg.webp" alt="">
+    </div>
+</body>
+</html>
