@@ -1,193 +1,251 @@
-#container{
+#container {
     display: grid;
-    grid-template-columns: repeat(12,100px);
-    grid-template-rows: repeat(5,60px);
+    grid-template-columns: repeat(12, 100px);
+    grid-template-rows: repeat(5, 60px);
     gap: 10px;
-    color:#1497be;
+    color: #1497be;
     /* background-color: #2f3639; */
     text-align: center;
     justify-content: center;
     /* align-items: center; */
 }
-.b{
-    background-color:#02bdd5 ;
-    padding:50px;
+
+.b {
+    background-color: #02bdd5;
+    padding: 50px;
 }
-.b>div{
+
+.b>div {
     background-color: #262c2c;
     border-radius: 10px;
     padding: 30px;
 }
-#container>div{
+
+#container>div {
     padding: 20px;
     /* padding-top:10px; */
     font-size: 20px;
 }
-#container>div:nth-child(1){
+
+#container>div:nth-child(1) {
     background-color: #2f3639;
 }
-#container>div:nth-child(2){
+
+#container>div:nth-child(2) {
     background-color: #2f3639;
 }
-#container>div:nth-child(3){
+
+#container>div:nth-child(3) {
     background-color: #2f3639;
 }
-#container>div:nth-child(4){
+
+#container>div:nth-child(4) {
     background-color: #2f3639;
 }
-#container>div:nth-child(5){
+
+#container>div:nth-child(5) {
     background-color: #2f3639;
 }
-#container>div:nth-child(6){
+
+#container>div:nth-child(6) {
     background-color: #2f3639;
 }
-#container>div:nth-child(7){
+
+#container>div:nth-child(7) {
     background-color: #2f3639;
 }
-#container>div:nth-child(8){
+
+#container>div:nth-child(8) {
     background-color: #2f3639;
 }
-#container>div:nth-child(9){
+
+#container>div:nth-child(9) {
     background-color: #2f3639;
 }
-#container>div:nth-child(10){
+
+#container>div:nth-child(10) {
     background-color: #2f3639;
 }
-#container>div:nth-child(11){
+
+#container>div:nth-child(11) {
     background-color: #2f3639;
 }
-#container>div:nth-child(12){
+
+#container>div:nth-child(12) {
     background-color: #2f3639;
 }
-#container>div:nth-child(13){
+
+#container>div:nth-child(13) {
     background-color: #2f3639;
 }
-#container>div:nth-child(14){
+
+#container>div:nth-child(14) {
     background-color: #2f3639;
 }
-#container>div:nth-child(15){
+
+#container>div:nth-child(15) {
     background-color: #2f3639;
 }
-#container>div:nth-child(16){
+
+#container>div:nth-child(16) {
     background-color: #2f3639;
 }
-#container>div:nth-child(17){
+
+#container>div:nth-child(17) {
     background-color: #2f3639;
 }
-#container>div:nth-child(18){
+
+#container>div:nth-child(18) {
     background-color: #2f3639;
 }
-#container>div:nth-child(19){
+
+#container>div:nth-child(19) {
     background-color: #2f3639;
 }
-#container>div:nth-child(20){
+
+#container>div:nth-child(20) {
     background-color: #2f3639;
 }
-#container>div:nth-child(21){
+
+#container>div:nth-child(21) {
     background-color: #2f3639;
 }
-#container>div:nth-child(22){
+
+#container>div:nth-child(22) {
     background-color: #2f3639;
 }
-#container>div:nth-child(23){
+
+#container>div:nth-child(23) {
     background-color: #2f3639;
 }
-#container>div:nth-child(24){
+
+#container>div:nth-child(24) {
     background-color: #2f3639;
 }
-#container>div:nth-child(25){
+
+#container>div:nth-child(25) {
     background-color: #2f3639;
 }
-#container>div:nth-child(26){
+
+#container>div:nth-child(26) {
     background-color: #2f3639;
 }
-#container>div:nth-child(27){
+
+#container>div:nth-child(27) {
     background-color: #2f3639;
 }
-#container>div:nth-child(28){
+
+#container>div:nth-child(28) {
     background-color: #2f3639;
 }
-#container>div:nth-child(29){
+
+#container>div:nth-child(29) {
     background-color: #2f3639;
 }
-#container>div:nth-child(30){
+
+#container>div:nth-child(30) {
     background-color: #2f3639;
 }
-#container>div:nth-child(31){
+
+#container>div:nth-child(31) {
     background-color: #2f3639;
 }
-#container>div:nth-child(32){
+
+#container>div:nth-child(32) {
     background-color: #2f3639;
 }
-#container>div:nth-child(33){
+
+#container>div:nth-child(33) {
     background-color: #2f3639;
 }
-#container>div:nth-child(34){
+
+#container>div:nth-child(34) {
     background-color: #2f3639;
 }
-#container>div:nth-child(35){
+
+#container>div:nth-child(35) {
     background-color: #2f3639;
     grid-area: 3/11/4/13;
 }
-#container>div:nth-child(36){
+
+#container>div:nth-child(36) {
     background-color: #2f3639;
 }
-#container>div:nth-child(37){
+
+#container>div:nth-child(37) {
     background-color: #2f3639;
 }
-#container>div:nth-child(38){
+
+#container>div:nth-child(38) {
     background-color: #2f3639;
 }
-#container>div:nth-child(39){
+
+#container>div:nth-child(39) {
     background-color: #2f3639;
 }
-#container>div:nth-child(40){
+
+#container>div:nth-child(40) {
     background-color: #2f3639;
 }
-#container>div:nth-child(41){
+
+#container>div:nth-child(41) {
     background-color: #2f3639;
 }
-#container>div:nth-child(42){
+
+#container>div:nth-child(42) {
     background-color: #2f3639;
 }
-#container>div:nth-child(43){
+
+#container>div:nth-child(43) {
     background-color: #2f3639;
 }
-#container>div:nth-child(44){
+
+#container>div:nth-child(44) {
     background-color: #2f3639;
 }
-#container>div:nth-child(45){
+
+#container>div:nth-child(45) {
     background-color: #2f3639;
 }
-#container>div:nth-child(46){
+
+#container>div:nth-child(46) {
     background-color: #2f3639;
     grid-area: 4/11/5/13;
 }
-#container>div:nth-child(47){
+
+#container>div:nth-child(47) {
     background-color: #2f3639;
 }
-#container>div:nth-child(48){
+
+#container>div:nth-child(48) {
     background-color: #2f3639;
 }
-#container>div:nth-child(49){
+
+#container>div:nth-child(49) {
     background-color: #2f3639;
 }
-#container>div:nth-child(50){
+
+#container>div:nth-child(50) {
     background-color: #2f3639;
 }
-#container>div:nth-child(51){
-    background-color:#2f3639 ;
+
+#container>div:nth-child(51) {
+    background-color: #2f3639;
     grid-area: 5/5/6/9;
 }
-#container>div:nth-child(52){
+
+#container>div:nth-child(52) {
     background-color: #2f3639;
 }
-#container>div:nth-child(53){
+
+#container>div:nth-child(53) {
     background-color: #2f3639;
 }
-#container>div:nth-child(54){
+
+#container>div:nth-child(54) {
     background-color: #2f3639;
 }
-#container>div:nth-child(55){
+
+#container>div:nth-child(55) {
     background-color: #2f3639;
 }
