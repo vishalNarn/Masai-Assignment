@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capturing and Displaying Form Data using DOM Manipulation</title>
+</head>
+<body>
+    <input type="text" id="myInput">
+    <button id="myButton" onclick="print()">Submit</button>
+    <p>Entered value: <span id="i"></span><p>
+</body>
+</html>
+
+<script>
+    let a=document.getElementById("myButton");
+    let b=document.getElementById("myInput");
+    function print(){
+        alert("Entered value: "); 
+        console.log(b.value);
+        // a.value=`Entered value:${b.value}`;
+        document.getElementById("i").innerHTML=b.value
+    }
+</script>

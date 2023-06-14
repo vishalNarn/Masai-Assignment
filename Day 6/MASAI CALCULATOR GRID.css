@@ -1,12 +1,13 @@
-h1{
+h1 {
     text-align: center;
     color: teal;
     font-size: 70px;
 }
-.c{
+
+.c {
     display: grid;
-    grid-template-columns: repeat(4,100px);
-    grid-template-rows: repeat(5,80px);
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: repeat(5, 80px);
     gap: 20px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     width: 550px;
@@ -16,34 +17,42 @@ h1{
     justify-content: space-evenly;
     text-align: center;
 }
-.c>div{
+
+.c>div {
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
-.c>div:nth-child(1){
+
+.c>div:nth-child(1) {
     grid-area: 1/1/2/5;
 }
-.c>div:nth-child(5){
+
+.c>div:nth-child(5) {
     background-color: black;
     color: white;
 }
-.c>div:nth-child(9){
+
+.c>div:nth-child(9) {
     background-color: black;
     color: white;
 }
-.c>div:nth-child(13){
+
+.c>div:nth-child(13) {
     background-color: black;
     color: white;
 }
-.c>div:nth-child(14){
-    background-color:red;
+
+.c>div:nth-child(14) {
+    background-color: red;
     color: white;
 }
-.c>div:nth-child(16){
+
+.c>div:nth-child(16) {
     background-color: black;
     color: white;
 }
-.c>div:nth-child(17){
+
+.c>div:nth-child(17) {
     background-color: black;
     color: white;
 }

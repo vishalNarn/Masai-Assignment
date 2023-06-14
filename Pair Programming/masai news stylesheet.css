@@ -5,7 +5,7 @@ h1 {
 .c1 {
     height: 60%;
     /* width: 20%; */
-    margin: 0 100px;
+    margin: 0px 100px;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     border-radius: 20px;
     text-align: justify;
@@ -31,6 +31,7 @@ h1 {
 .c1>img {
     height: 80%;
     width: 80%;
+    border-radius: 20px;
 }
 
 .c1~div {
@@ -49,12 +50,19 @@ div>h5 {
     padding-left: 20px;
 }
 
-.c2 img {
-    height: 100px;
-    width: 290px;
-    margin: auto;
-    margin-left: 160px;
+.c2{
     justify-content: space-between;
+    display: flex;
+    width: 600px;
+}
+/* .c>div{
+    margin: 100px;
+} */
+.c2>div>img {
+    height: 200px;
+    width: 300px;
+    margin-left: 250px;
+    margin-right: -200px;
 }
 
   .d {
