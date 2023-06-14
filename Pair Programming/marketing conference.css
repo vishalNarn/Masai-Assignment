@@ -1,0 +1,21 @@
+#j{
+    border: 3px solid black;
+    border-right: 0px;
+    width: 1000px;
+    height: 1500px;
+}
+
+#j>div{
+    display: flex;
+}
+hr{
+    width: 20px;
+    border: 2px solid red;
+    border:2px solid navy ;
+    margin-right: 10px;
+    margin-left: 80px;
+}
+h3{
+    margin-left: 20px;
+    margin-top: px;
+}
