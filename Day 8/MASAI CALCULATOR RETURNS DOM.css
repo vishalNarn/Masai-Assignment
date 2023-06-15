@@ -18,11 +18,20 @@ h1 {
     text-align: center;
 }
 
+#display{
+    text-align: end;
+    padding-right: 20px;
+}
 .c>div {
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     font-size: 40px;
     padding: 10px;
+}
+
+.c>div:hover{
+    background-color: teal;
+    cursor: pointer;
 }
 
 .c>div:nth-child(1) {

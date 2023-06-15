@@ -4,7 +4,6 @@ h1 {
 
 .c1 {
     height: 60%;
-    /* width: 20%; */
     margin: 0px 100px;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     border-radius: 20px;
@@ -32,6 +31,7 @@ h1 {
     height: 80%;
     width: 80%;
     border-radius: 20px;
+    margin: 20px;
 }
 
 .c1~div {
@@ -51,18 +51,22 @@ div>h5 {
 }
 
 .c2{
-    justify-content: space-between;
     display: flex;
+    flex-direction: row;
     width: 600px;
+    justify-content: space-between;
+    margin-left: 50px;
 }
-/* .c>div{
-    margin: 100px;
-} */
+
+#x{
+    margin-top: 50px;
+    margin-bottom: -10px;
+}
 .c2>div>img {
     height: 200px;
-    width: 300px;
-    margin-left: 250px;
-    margin-right: -200px;
+    width: 320px;
+    margin-left: 200px;
+    margin-right: -170px;
 }
 
   .d {
