@@ -37,27 +37,43 @@
 <script>
     let keys=document.querySelectorAll(".c>#display~div")
     let bag=""
-    let x=0
-    let y=0
-    for (i=0; i<keys.length; i++){
-        keys[i].addEventListener("click",function(event){
+    const solve=event=>{
         let targetNumber=event.target.innerText
 
         if (targetNumber==="="){
-            document.querySelector("#display").innerText=eval(bag)
+            let x=bag.replace(/x/g,"*")
+            document.querySelector("#display").innerText=eval(x)
         }
         else if (targetNumber==="C"){
             bag=""
             document.querySelector("#display").innerText="0"
         }
-        // else if (targetNumber==="x"){
-        //     document.querySelector("#display").innerText="*"
-        // }
         else{
             bag+=targetNumber
             document.querySelector("#display").innerText=bag
         }
-        })  
-        }
+    }
+    for (i=0; i<keys.length; i++){
+        keys[i].addEventListener("click",solve)
+    }
+
+    // for (i=0; i<keys.length; i++){
+    //     keys[i].addEventListener("click",function(event){
+    //     let targetNumber=event.target.innerText
+
+    //     if (targetNumber==="="){
+    //         let x=bag.replace(/x/g,"*")
+    //         document.querySelector("#display").innerText=eval(x)
+    //     }
+    //     else if (targetNumber==="C"){
+    //         bag=""
+    //         document.querySelector("#display").innerText="0"
+    //     }
+    //     else{
+    //         bag+=targetNumber
+    //         document.querySelector("#display").innerText=bag
+    //     }
+    //     })  
+    //     }
 
 </script>

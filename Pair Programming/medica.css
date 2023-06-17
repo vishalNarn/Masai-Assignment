@@ -130,3 +130,8 @@
 #disp>div~div{
     margin-left: 160px;
 }
+
+.fa-arrow-right{
+    position: relative;
+    top:3px
+}
