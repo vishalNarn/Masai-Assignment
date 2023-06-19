@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .timer {
+      display: flex;
+      justify-content: space-around;
+      text-align: center;
+      width: 500px;
+      height: 230px;
+      background-color: black;
+      margin: auto;
+      margin-top: 250px;
+      justify-items: center;
+      color: white;
+    }
+
+    .timer>div {
+      background-color: rgb(0, 110, 255);
+      border: 2px solid black;
+      width: 100px;
+      height: 100px;
+      margin: auto;
+      font-size: 80px;
+    }
+
+    .timer>p {
+      font-size: 80px;
+      margin-top: 60px;
+    }
+
+    .timer>div>h2 {
+      font-size: 20px;
+      margin-top: 120px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="timer">
+    <div>
+      <div id="hour"></div>
+      <h2>Hours</h2>
+    </div>
+    <p>:</p>
+    <div>
+      <div id="min"></div>
+      <h2>Minutes</h2>
+    </div>
+    <p>:</p>
+    <div>
+      <div id="sec"></div>
+      <h2>Seconds</h2>
+    </div>
+  </div>
+</body>
+<script>
+  let h = document.getElementById("hour")
+  let m = document.getElementById("min")
+  let s = document.getElementById("sec")
+
+  let hr = 0
+  let mi = 0
+  let se = 0
+
+  setInterval(function () {
+    se++
+    if (se >= 60) {
+      se = 0
+      mi++
+      if (mi >= 60) {
+        mi = 0
+        hr++
+        h.innerText = hr
+      }
+      m.innerText = mi
+    }
+    s.innerText = se
+  }, 1000)
+</script>
+
+</html>
