@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let isComplete=false
+    let completeAssignment=new Promise(function(resolve,reject){
+        if (isComplete==true){
+            resolve("assignment completed")
+        }
+        else{
+            reject("assignment not completed")
+        }
+    })
+    console.log(completeAssignment)
+    completeAssignment.then((function(data1){
+        console.log(data1)
+    })).catch(function(data2){
+        console.log(data2)
+    })
+</script>
+</html>

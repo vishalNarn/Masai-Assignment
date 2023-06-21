@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            width: 1200px;
+            margin: auto;
+            margin-left: 150px;
+        }
+
+        .x{
+            display: flex;
+            justify-content: space-around;
+        }
+
+    </style>
+</head>
+<body>
+    <img src="https://www.learnsimpli.com/wp-content/uploads/2020/02/4-6.png" alt="">
+    <!-- <img src="https://www.freecodecamp.org/news/content/images/2022/02/scope-chain.png" alt=""> -->
+<div class="x">
+    <button id="st">START</button>
+    <button id="sp">STOP</button>
+    <button id="nx">NEXT</button>
+    <button id="pr">PREVIOUS</button>
+</div>
+</body>
+<script>
+    let start = document.getElementById("st")
+    let stop = document.getElementById("sp")
+    let next = document.getElementById("nx")
+    let prev = document.getElementById("pr")
+    let timerId;
+
+    start.addEventListener('click',function(){
+        timerId=setInterval(function(){
+            
+        },5000)
+    })
+</script>
+</html>

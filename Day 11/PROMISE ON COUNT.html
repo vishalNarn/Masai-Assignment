@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let count=5
+    let promise=new Promise(function(resolve,reject){
+        if (count>0){
+            resolve("Positive count")
+        }
+        else{
+            reject("negative count")
+        }
+    })
+    console.log(promise)
+    promise.then(function(data1){
+        console.log(data1)
+    }).catch(function(data2){
+        console.log(data2)
+    })
+</script>
+
+</html>
