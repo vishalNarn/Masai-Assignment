@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="number">
+    <button onclick="clickme()">Submit</button>
+</body>
+<script>
+    function clickme() {
+        let otp = document.querySelector("input").value
+        <!-- console.log(otp) -->
+        let promise = new Promise(function (resolve, reject) {
+            setTimeout(function () {
+                if (otp == 1234) {
+                    resolve("otp is correct")
+                }
+                else {
+                    reject("otp is incorrect")
+                }
+            }, 2000)
+        })
+        promise.then(function (data1) {
+            alert(data1)
+        }).catch(function (data2) {
+            alert(data2)
+        })
+    }
+</script>
+
+</html>
