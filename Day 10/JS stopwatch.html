@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <input type="text" placeholder="hours" id="hour">
+  <input type="text" placeholder="mins" id="min">
+  <input type="text" placeholder="secs" id="sec">
+  <br> <br>
+  <button id="st">START</button>
+  <button id="sp">STOP</button>
+  <button id="rs">RESET</button>
+</body>
+<script>
+  let h = document.getElementById("hour")
+  let m = document.getElementById("min")
+  let s = document.getElementById("sec")
+  let start = document.getElementById("st")
+  let stop = document.getElementById("sp")
+  let reset = document.getElementById("rs")
+  let timerId;
+
+  start.addEventListener('click', function () {
+    timerId = setInterval(function () {
+      s.value++
+      if (s.value >= 60) {
+        m.value++
+        s.value = 0
+        if (m.value >= 60) {
+          h.value++
+          m.value = 0
+        }
+      }
+      if (m.value==0){
+        m.value=""
+      }
+      if (h.value==0){
+        h.value=""
+      }
+    }, 1000)
+  })
+
+  stop.addEventListener('click', function () {
+    clearInterval(timerId)
+  })
+
+  reset.addEventListener('click', function () {
+    s.value = 0
+    m.value = 0
+    h.value = 0
+  })
+</script>
+
+</html>
