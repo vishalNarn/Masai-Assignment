@@ -16,15 +16,15 @@
       margin: auto;
       margin-top: 250px;
       justify-items: center;
-      color: white;
+      color:white;
     }
 
-    .timer>div {
+    .timercount {
       background-color: rgb(0, 110, 255);
       border: 2px solid black;
       width: 100px;
       height: 100px;
-      margin: auto;
+      margin-top: 50px;
       font-size: 80px;
     }
 
@@ -35,7 +35,7 @@
 
     .timer>div>h2 {
       font-size: 20px;
-      margin-top: 120px;
+      margin-top: 20px;
     }
   </style>
 </head>
@@ -43,18 +43,18 @@
 <body>
   <div class="timer">
     <div>
-      <div id="hour"></div>
+      <div id="hour" class="timercount"></div>
       <h2>Hours</h2>
     </div>
     <p>:</p>
     <div>
-      <div id="min"></div>
+      <div id="min" class="timercount"></div>
       <h2>Minutes</h2>
     </div>
     <p>:</p>
     <div>
-      <div id="sec"></div>
-      <h2>Seconds</h2>
+      <div id="sec" class="timercount"></div>
+      <div><h2>Seconds</h2></div>
     </div>
   </div>
 </body>
