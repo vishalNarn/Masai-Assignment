@@ -27,6 +27,18 @@
 
   start.addEventListener('click', function () {
     timerId = setInterval(function () {
+      if (s.value<0 || m.value<0 || h.value<0){
+        clearInterval(timerId)
+        return
+      }
+      if (s.value>60){
+        m.value=Math.floor(s.value/60)
+        s.value=s.value-60
+      }
+      if (m.value>60){
+        h.value=Math.floor(m.value/60)
+        m.value=m.value-60
+      }
       s.value++
       if (s.value >= 60) {
         m.value++

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    h1{
+      text-align: center;
+    }
+    #timer{
+      font-size: 40px;
+      text-align: center;
+      margin: 20px;
+    }
+    .inp{
+      text-align: center;
+    }
+    .btn{
+      text-align: center;
+      margin: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Timer</h1>
+  <div id="timer">00:00:00</div>
+  <div class="inp">
+    <label for="hours">Hours: </label>
+    <input type="number" id="hours" min="0" value="0">
+    <label for="minutes">Minutes: </label>
+    <input type="number" id="minutes" min="0" value="0">
+    <label for="seconds">Seconds: </label>
+    <input type="number" id="seconds" min="0"  value="0">
+  </div>
+  <div class="btn">
+    <button id="startButton" onclick="toggleTimer()">Start</button>
+    <button id="pauseButton" onclick="toggleTimer()" style="display: none;">Pause</button>
+    <button onclick="resetTimer()">Reset</button>
+  </div>
+  <script>
+    var timerInterval;
+    var hoursInput = document.getElementById("hours")
+    var minutesInput = document.getElementById("minutes")
+    var secondsInput = document.getElementById("seconds")
+    var timerDisplay = document.getElementById("timer")
+    var hours,minutes,seconds;
+    var isTimerRunning = false;
+    function toggleTimer(){
+      if(isTimerRunning){
+        pauseTimer()
+      }
+      else{
+        startTimer()
+      }
+    }
+    function startTimer(){
+      hours=parseInt(hoursInput.value)
+      minutes=parseInt(minutesInput.value)
+      seconds=parseInt(secondsInput.value)
+      var fixedH = hoursInput.value
+      var fixedM = minutesInput.value
+      var fixedS = secondsInput.value
+      timerInterval = setInterval(updateTimer,1000);
+      isTimerRunning=true
+      document.getElementById("startButton").style.display="none"
+      document.getElementById("pauseButton").style.display="inline"
+    }
+    function updateTimer(){
+      if (hours === 0 && seconds === 0 && minutes===0){
+        clearInterval(timerInterval)
+        isTimerRunning=false
+        document.getElementById("startButton").style.display="inline"
+        document.getElementById("pauseButton").style.display="none"
+        return;
+      }
+      if (seconds>60){
+        minutes=Math.floor(seconds/60)
+        seconds=seconds-60
+        <!-- seconds%=60 -->
+      }
+      if (minutes>60){
+        hours=Math.floor(minutes/60)
+        minutes=minutes-60
+      }
+      seconds--;
+      if(seconds<0){
+        seconds=59
+        minutes--;
+        if(minutes<0){
+          minutes=59
+          hours--;
+        }
+      }
+      var fomatHours = func(hours)
+      var fomatMinutes = func(minutes)
+      var formatSeconds = func(seconds)
+      timerDisplay.textContent = fomatHours+":"+fomatMinutes+":"+formatSeconds
+    }
+    function pauseTimer(){
+      clearInterval(timerInterval)
+      isTimerRunning = false;
+      document.getElementById("startButton").style.display="inline"
+      document.getElementById("pauseButton").style.display="none"
+    }
+    function resetTimer(){
+      clearInterval(timerInterval)
+      isTimerRunning = false;
+      document.getElementById("startButton").style.display="inline"
+      document.getElementById("pauseButton").style.display="none"
+      hoursInput.value = func(fixedH)
+      minutesInput.value = func(fixedM)
+      secondsInput.value = func(fixedS)
+      var fomatHours = func(fixedH)
+      var fomatMinutes = func(fixedM)
+      var formatSeconds = func(fixedS)
+      timerDisplay.textContent = fomatHours+":"+fomatMinutes+":"+formatSeconds
+    }
+    function func(num){
+      return num.toString().padStart(2,"0")
+    }
+  </script>
+</body>
+</html>

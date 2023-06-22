@@ -8,9 +8,9 @@
 </head>
 
 <body>
-  <input type="text" placeholder="hours" id="hour">
-  <input type="text" placeholder="mins" id="min">
-  <input type="text" placeholder="secs" id="sec">
+  <input type="number" placeholder="hours" id="hour">
+  <input type="number" placeholder="mins" id="min">
+  <input type="number" placeholder="secs" id="sec">
   <br> <br>
   <button id="st">START</button>
   <button id="sp">STOP</button>
@@ -27,16 +27,26 @@
 
   start.addEventListener('click',function(){
     timerId=setInterval(function(){
-      if (s.value>=1){
-        s.value--
+      if (s.value==0 && m.value==0 && h.value==0){
+        clearInterval(timerId)
+        return
       }
-      if (s.value==0 && m.value>=1){
+      if (s.value>60){
+        m.value=Math.floor(s.value/60)
+        s.value=s.value-60
+      }
+      if (m.value>60){
+        h.value=Math.floor(m.value/60)
+        m.value=m.value-60
+      }
+      s.value--
+      if (s.value<0 && m.value>=0){
         m.value--
-        s.value=60
+        s.value=59
       }
-      if (m.value==0 && h.value>=1){
+      if (m.value<0 && h.value>=1){
         h.value--
-        m.value=60
+        m.value=59
       }
     },1000)
   })
