@@ -47,6 +47,8 @@
     var timerDisplay = document.getElementById("timer")
     var hours,minutes,seconds;
     var isTimerRunning = false;
+    var x = document.getElementById("startButton")
+    var y = document.getElementById("pauseButton")
     function toggleTimer(){
       if(isTimerRunning){
         pauseTimer()
@@ -64,15 +66,15 @@
       var fixedS = secondsInput.value
       timerInterval = setInterval(updateTimer,1000);
       isTimerRunning=true
-      document.getElementById("startButton").style.display="none"
-      document.getElementById("pauseButton").style.display="inline"
+      x.style.display="none"
+      y.style.display="inline"
     }
     function updateTimer(){
       if (hours === 0 && seconds === 0 && minutes===0){
         clearInterval(timerInterval)
         isTimerRunning=false
-        document.getElementById("startButton").style.display="inline"
-        document.getElementById("pauseButton").style.display="none"
+        x.style.display="inline"
+        y.style.display="none"
         return;
       }
       if (seconds>60){
@@ -101,14 +103,14 @@
     function pauseTimer(){
       clearInterval(timerInterval)
       isTimerRunning = false;
-      document.getElementById("startButton").style.display="inline"
-      document.getElementById("pauseButton").style.display="none"
+      x.style.display="inline"
+      y.style.display="none"
     }
     function resetTimer(){
       clearInterval(timerInterval)
       isTimerRunning = false;
-      document.getElementById("startButton").style.display="inline"
-      document.getElementById("pauseButton").style.display="none"
+      x.style.display="inline"
+      y.style.display="none"
       hoursInput.value = func(fixedH)
       minutesInput.value = func(fixedM)
       secondsInput.value = func(fixedS)

@@ -2,68 +2,100 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
         img {
             width: 1200px;
+            height: 700px;
             margin: auto;
             margin-left: 150px;
         }
 
         .x {
             display: flex;
-            justify-content: space-around;
+            justify-content: space-evenly;
             margin-top: 10px;
         }
+
     </style>
+
 </head>
 
 <body>
+
     <!-- <img src="https://www.learnsimpli.com/wp-content/uploads/2020/02/4-6.png" alt=""> -->
     <!-- <img src="https://www.freecodecamp.org/news/content/images/2022/02/scope-chain.png" alt=""> -->
-    <img id="img" src="" alt="" name="slide">
+    
+    <img id="img" src="" alt="">
+
     <div class="x">
         <button id="st" onclick="st()">START</button>
-        <button id="sp" onclick="sp()">STOP</button>
-        <button id="nx" onclick="nx()">NEXT</button>
+        <button id="sp" onclick="sp()" style="display: none;">STOP</button>
         <button id="pr" onclick="pr()">PREVIOUS</button>
+        <button id="nx" onclick="nx()">NEXT</button>
     </div>
+
 </body>
+
 <script>
-    
+
     let start = document.getElementById("st")
     let stop = document.getElementById("sp")
     let next = document.getElementById("nx")
     let prev = document.getElementById("pr")
     let img = document.getElementById("img")
+    let status = false
     let timerId;
     let count = 1
-    let imgLink = `c:\Users\LENOVO\Downloads\Images\SlideShow_JS\image${count}.png`
+    let imgLink;
+    <!-- img.setAttribute("src",imgLink) -->
 
-    function st(count) {
-        timerId = setTimeout(function () {
-            document.slide.src=imgLink
-        }, 3000)
+    function update(){
+        imgLink = `SlideShow_JS/image${count}.jpg`
+        img.src=imgLink
+    }
+
+    update()
+    
+    function toggle(){
+        if (status){
+            st()
+        }
+        else{
+            sp()
+        }
+    }
+    function st() {
+        status = true
+        start.style.display = "none"
+        stop.style.display = "inline"
+        timerId = setTimeout(update,3000)
         count++
     }
-    function sp(count) {
+    function sp() {
+        status = false
+        start.style.display = "inline"
+        stop.style.display = "none"
         clearTimeout(timerId)
     }
 
-    function nx(count) {
+    function nx() {
         count++
-        if (count==3){
+        if (count==21){
             count=1
         }
+        update()
     }
 
-    function pr(count){
+    function pr(){
         count--
         if (count==0){
-            count=1
+            count=20
         }
+        update()
     }
 
 
