@@ -47,42 +47,52 @@
     let next = document.getElementById("nx")
     let prev = document.getElementById("pr")
     let img = document.getElementById("img")
-    let status = false
+    //let status = false
     let timerId;
     let count = 1
     let imgLink;
+
     <!-- img.setAttribute("src",imgLink) -->
 
     function update(){
         imgLink = `SlideShow_JS/image${count}.jpg`
         img.src=imgLink
+        setTimeout(update,3000)
     }
 
     update()
     
-    function toggle(){
+    /*function toggle(){
         if (status){
             st()
         }
         else{
             sp()
         }
-    }
+    }*/
+
     function st() {
-        status = true
+        //status = true
         start.style.display = "none"
         stop.style.display = "inline"
-        timerId = setTimeout(update,3000)
-        count++
+        if (count<21){
+            count++
+        }
+        else{
+            count=1
+        }
+        timerId = setTimeout(st,3000)
+        
     }
     function sp() {
-        status = false
+        //status = false
         start.style.display = "inline"
         stop.style.display = "none"
         clearTimeout(timerId)
     }
 
     function nx() {
+        sp()
         count++
         if (count==21){
             count=1
@@ -91,6 +101,7 @@
     }
 
     function pr(){
+        sp()
         count--
         if (count==0){
             count=20
