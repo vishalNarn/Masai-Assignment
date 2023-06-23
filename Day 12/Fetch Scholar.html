@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #cont{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+        }
+
+        #cont>div{
+            width: 100%;
+            border: 1px solid black;
+        }
+
+        #cont>div>img{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <select id="filter">
+        <option value="">Select category</option>
+        <option value="Men's clothing">Men's clothing</option>
+        <option value="Jewellery">Jewellery</option>
+        <option value="Electronics">Electronic device</option>
+    </select>
+
+    <div id="cont">
+
+    </div>
+</body>
+</html>
+
+<script>
+    let API = "https://fakestoreapi.com/products"
+    let response = fetch(API)
+    let A = []
+    let parent = document.getElementById("cont")
+    let filter = document.getElementById("filter")
+    response.then(function(res){
+        return res.json()
+    }).then(function(data){
+        display(data)
+        A=data
+        //console.log(A)
+    })
+
+    function display(data){
+        data.forEach(function(element){
+            //console.log(element)
+            let div = document.createElement("div")
+            let img = document.createElement("img")
+            let h4 = document.createElement("h4")
+            let p = document.createElement("p")
+            let h = document.createElement("h1")
+            img.setAttribute("src",element.image)
+            //img.src = element.image
+            h4.innerText = element.title
+            p.innerText = element.price
+            h.innerText = element.category
+            div.append(img,h4,p,h)
+            parent.append(div)
+        })
+    }
+</script>

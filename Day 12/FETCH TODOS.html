@@ -20,7 +20,6 @@
 <script>
     let API = "https://jsonplaceholder.typicode.com/todos"
     let response = fetch(API)
-    let A = []
     let parent = document.getElementById("cont")
     response.then(function(res){
         return res.json()
