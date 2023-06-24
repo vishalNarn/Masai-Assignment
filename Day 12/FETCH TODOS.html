@@ -28,40 +28,37 @@
     })
 
     function display(data){
+        let tab = document.createElement("table")
+        let th = document.createComment("thead")
+        let tb = document.createComment("tbody")
+        let tr1 = document.createElement("tr")
+        let th1 = document.createElement("th")
+        let th2 = document.createElement("th")
+        let th3 = document.createElement("th")
+        let th4 = document.createElement("th")
+        th1.innerText="userId"
+        th2.innerText="id"
+        th3.innerText="title"
+        th4.innerText="status"
+        tab.append(th,tb,tr1)
+        tr1.append(th1,th2,th3,th4)
+        tab.border="1" 
+        tab.cellSpacing="0"
+        tab.style.margin="auto"
         data.forEach(function(element){
             //console.log(element)
-            let tab = document.createElement("table")
-            let tr1 = document.createElement("tr")
             let tr2 = document.createElement("tr")
             let td1 = document.createElement("td")
             let td2 = document.createElement("td")
             let td3 = document.createElement("td")
             let td4 = document.createElement("td")
-            let th1 = document.createElement("th")
-            let th2 = document.createElement("th")
-            let th3 = document.createElement("th")
-            let th4 = document.createElement("th")
-            let th = document.createComment("thead")
-            let tb = document.createComment("tbody")
-            tab.border="1"
-            tab.cellSpacing="10"
-            tab.style.margin="auto"
             td1.innerText=element.userId
             td2.innerText=element.id
             td3.innerText=element.title
             td4.innerText=element.completed
-            th1.innerText="userId"
-            th2.innerText="id"
-            th3.innerText="title"
-            th4.innerText="status"
-            tab.append(th,tb,tr1,tr2)
-            //th.append(tr1)
-            //tb.append(tr2)
-            tr1.append(th1,th2,th3,th4)
+            tab.append(tr2)
             tr2.append(td1,td2,td3,td4)
             parent.append(tab)
-
-
         })
     }
 

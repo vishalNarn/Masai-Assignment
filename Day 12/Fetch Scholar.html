@@ -8,6 +8,8 @@
         #cont{
             display: grid;
             grid-template-columns: repeat(4,1fr);
+            /*grid-template-rows: repeat(5,1fr);*/
+            gap: 20px;
         }
 
         #cont>div{
@@ -21,11 +23,12 @@
     </style>
 </head>
 <body>
-    <select id="filter">
+    <select id="filter" onchange="sel()">
         <option value="">Select category</option>
-        <option value="Men's clothing">Men's clothing</option>
-        <option value="Jewellery">Jewellery</option>
-        <option value="Electronics">Electronic device</option>
+        <option value="men's clothing">Men's clothings</option>
+        <option value="jewelery">Jewelleries</option>
+        <option value="electronics">Electronic devices</option>
+        <option value="women's clothing">Women's clothings</option>
     </select>
 
     <div id="cont">
@@ -43,25 +46,44 @@
     response.then(function(res){
         return res.json()
     }).then(function(data){
+        //console.log(data)
         display(data)
         A=data
         //console.log(A)
     })
 
+    function sel(){
+        //console.log(filter.value)
+            let x = A.filter((item)=>{
+                return item.category===filter.value
+            })
+            display(x)
+            A=x
+            //console.log(x)
+    }
+
     function display(data){
         data.forEach(function(element){
-            //console.log(element)
+            console.log(element)
             let div = document.createElement("div")
             let img = document.createElement("img")
+            let h3 = document.createElement("h3")
             let h4 = document.createElement("h4")
+            let h5 = document.createElement("h5")
+            let h2 = document.createElement("h2")
             let p = document.createElement("p")
             let h = document.createElement("h1")
+            let des = document.createElement("p")
             img.setAttribute("src",element.image)
             //img.src = element.image
             h4.innerText = element.title
             p.innerText = element.price
             h.innerText = element.category
-            div.append(img,h4,p,h)
+            des.innerText = element.description
+            h3.innerText = element.id
+            h5.innerText = element.rating.count
+            h2.innerText = element.rating.rate
+            div.append(h3,img,h4,p,h,des,h5,h2)
             parent.append(div)
         })
     }

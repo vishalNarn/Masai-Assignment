@@ -32,8 +32,8 @@
     <img id="img" src="" alt="">
 
     <div class="x">
-        <button id="st" onclick="st()">START</button>
-        <button id="sp" onclick="sp()" style="display: none;">STOP</button>
+        <button id="st" onclick="toggle()">START</button>
+        <button id="sp" onclick="toggle()" style="display: none;">STOP</button>
         <button id="pr" onclick="pr()">PREVIOUS</button>
         <button id="nx" onclick="nx()">NEXT</button>
     </div>
@@ -47,7 +47,7 @@
     let next = document.getElementById("nx")
     let prev = document.getElementById("pr")
     let img = document.getElementById("img")
-    //let status = false
+    let status = true
     let timerId;
     let count = 1
     let imgLink;
@@ -62,20 +62,21 @@
 
     update()
     
-    /*function toggle(){
+    function toggle(){
+        //console.log(status)
         if (status){
             st()
         }
         else{
             sp()
         }
-    }*/
+    }
 
     function st() {
-        //status = true
         start.style.display = "none"
         stop.style.display = "inline"
-        if (count<21){
+        status = false
+        if (count<20){
             count++
         }
         else{
@@ -85,9 +86,9 @@
         
     }
     function sp() {
-        //status = false
         start.style.display = "inline"
         stop.style.display = "none"
+        status = true
         clearTimeout(timerId)
     }
 
