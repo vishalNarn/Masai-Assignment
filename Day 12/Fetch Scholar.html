@@ -1,90 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        #cont{
+        .product-grid {
             display: grid;
-            grid-template-columns: repeat(4,1fr);
-            /*grid-template-rows: repeat(5,1fr);*/
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 20px;
+            margin: 20px;
         }
 
-        #cont>div{
-            width: 100%;
-            border: 1px solid black;
+        .product-card {
+            border: 1px solid #ddd;
+            padding: 20px;
+            text-align: center;
         }
 
-        #cont>div>img{
-            width: 100%;
+        .product-card img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .product-card h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .product-card p {
+            margin-bottom: 5px;
+        }
+
+        .product-card .price {
+            font-weight: bold;
+        }
+
+        .product-card .rating {
+            color: #FFC107;
+            font-size: 14px;
         }
     </style>
 </head>
+
 <body>
-    <select id="filter" onchange="sel()">
-        <option value="">Select category</option>
-        <option value="men's clothing">Men's clothings</option>
-        <option value="jewelery">Jewelleries</option>
-        <option value="electronics">Electronic devices</option>
-        <option value="women's clothing">Women's clothings</option>
+    <input type="text" id="searchInput" placeholder="Search..">
+    <select id="filterSelect">
+        <option value="all">Select Category</option>
+        <option value="men's clothing">Men's Clothing</option>
+        <option value="jewelery">Jewellery</option>
+        <option value="electronics">Electronics</option>
+        <option value="women's clothing">Women's Clothing</option>
     </select>
-
-    <div id="cont">
-
-    </div>
+    <div id="products" class="product-grid"></div>
 </body>
+
 </html>
-
 <script>
-    let API = "https://fakestoreapi.com/products"
-    let response = fetch(API)
-    let A = []
-    let parent = document.getElementById("cont")
-    let filter = document.getElementById("filter")
-    response.then(function(res){
-        return res.json()
-    }).then(function(data){
-        //console.log(data)
-        display(data)
-        A=data
-        //console.log(A)
+    async function fetchProducts() {
+        try {
+            const response = await fetch('https://fakestoreapi.com/products')
+            const data = await response.json();
+            console.log(data)
+            return data;
+        } catch (error) {
+            console.error("Error")
+            return [];
+        }
+    }
+    function displayProducts() {
+        const searchInput = document.getElementById("searchInput")
+        const filterSelect = document.getElementById("filterSelect")
+        const productContainer = document.getElementById("products")
+        productContainer.innerHTML = "";
+        fetchProducts().then(products => {
+            products.forEach(prod => {
+                if (filterSelect.value == 'all' || filterSelect.value === prod.category) {
+                    if ((searchInput.value == "") || prod.title.toLowerCase().includes(searchInput.value.toLowerCase())) {
+                        const productCard = document.createElement("div");
+                        productCard.classList.add("product-card");
+                        const id = document.createElement("h2")
+                        id.textContent = prod.id
+                        productCard.appendChild(id)
+                        const productImage = document.createElement("img")
+                        productImage.src = prod.image;
+                        productImage.alt = prod.title;
+                        productCard.appendChild(productImage)
+                        const productTitle = document.createElement("h3")
+                        productTitle.textContent = prod.title
+                        productCard.appendChild(productTitle)
+                        const productDescription = document.createElement("p")
+                        productDescription.textContent = prod.description
+                        productCard.appendChild(productDescription)
+                        const productPrice = document.createElement("p")
+                        productPrice.classList.add("price");
+                        productPrice.textContent = "Price: $" + prod.price
+                        productCard.appendChild(productPrice)
+                        const productRating = document.createElement("p")
+                        productRating.classList.add("rating");
+                        productRating.textContent = "Rating: " + prod.rating.rate + "/" + prod.rating.count
+                        productCard.appendChild(productRating)
+                        productContainer.appendChild(productCard)
+                    }
+                }
+            });
+        });
+    }
+    document.getElementById("searchInput").addEventListener("keydown", function (event) {
+        if (event.keyCode === 13) {
+            displayProducts();
+        }
     })
-
-    function sel(){
-        //console.log(filter.value)
-            let x = A.filter((item)=>{
-                return item.category===filter.value
-            })
-            display(x)
-            A=x
-            //console.log(x)
-    }
-
-    function display(data){
-        data.forEach(function(element){
-            console.log(element)
-            let div = document.createElement("div")
-            let img = document.createElement("img")
-            let h3 = document.createElement("h3")
-            let h4 = document.createElement("h4")
-            let h5 = document.createElement("h5")
-            let h2 = document.createElement("h2")
-            let p = document.createElement("p")
-            let h = document.createElement("h1")
-            let des = document.createElement("p")
-            img.setAttribute("src",element.image)
-            //img.src = element.image
-            h4.innerText = element.title
-            p.innerText = element.price
-            h.innerText = element.category
-            des.innerText = element.description
-            h3.innerText = element.id
-            h5.innerText = element.rating.count
-            h2.innerText = element.rating.rate
-            div.append(h3,img,h4,p,h,des,h5,h2)
-            parent.append(div)
-        })
-    }
+    document.getElementById("filterSelect").addEventListener("change", displayProducts)
+    displayProducts()
 </script>
