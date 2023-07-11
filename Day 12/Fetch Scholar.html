@@ -70,8 +70,9 @@
             return [];
         }
     }
+    const searchInput = document.getElementById("searchInput")
     function displayProducts() {
-        const searchInput = document.getElementById("searchInput")
+        //const searchInput = document.getElementById("searchInput")
         const filterSelect = document.getElementById("filterSelect")
         const productContainer = document.getElementById("products")
         productContainer.innerHTML = "";
@@ -108,7 +109,8 @@
             });
         });
     }
-    document.getElementById("searchInput").addEventListener("keydown", function (event) {
+    //document.getElementById("searchInput").addEventListener("keydown", function (event) {
+        searchInput.addEventListener("keydown", function (event) {
         //console.log(event.keyCode)
         if (event.keyCode === 13) {
             displayProducts();

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Timer</title>
+  <style>
+    .timer-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      font-size: 3rem;
+      font-family: Arial, sans-serif;
+    }
+    .input-container {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+    .input-container input[type="number"] {
+      padding: 0.5rem;
+      font-size: 1rem;
+    }
+    .button-container{
+      margin: 20px;
+      margin-top: 100px;
+      margin-left: -400px;
+    }
+    .button-container button {
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      margin-right: 20px;
+    }
+    #timer{
+      margin-bottom: 200px;
+      margin-right: 300px;
+    }
+  </style>
+</head>
+<body>
+  <div class="timer-container">
+    <div class="input-container">
+      <input type="number" id="hours" placeholder="Hours">
+      <input type="number" id="minutes" placeholder="Minutes">
+      <input type="number" id="seconds" placeholder="Seconds">
+    </div>
+    <div class="button-container">
+      <!-- <button onclick="startTimer()">Start</button> -->
+      <button onclick="toggle()" id="startButton">Start</button>
+      <!-- <button onclick="stopTimer()">Stop</button> -->
+      <button onclick="toggle()" id="stopButton" style="display: none;">Stop</button>
+      <button onclick="resetTimer()">Reset</button>
+    </div>
+    <div id="timer">00:00</div>
+  </div>
+  <script>
+    let intervalId;
+    let hoursInput = document.getElementById("hours");
+    let minutesInput = document.getElementById("minutes");
+    let secondsInput = document.getElementById("seconds");
+    let timerDisplay = document.getElementById("timer");
+    var isTimerRunning = false;
+    var x = document.getElementById("startButton")
+    var y = document.getElementById("stopButton")
+    let totalSeconds = 0;
+    let remainingSeconds = 0;
+    let remainingMinutes = 0;
+    let remainingHours = 0;
+    function toggle(){
+      if(isTimerRunning){
+        stopTimer()
+      }
+      else{
+        startTimer()
+      }
+    }
+    function startTimer() {
+      let hours = parseInt(hoursInput.value) || 0;
+      let minutes = parseInt(minutesInput.value) || 0;
+      let seconds = parseInt(secondsInput.value) || 0;
+      if (intervalId) {
+        clearInterval(intervalId);
+      }
+      //if (remainingMinutes === 0) {
+        //totalMinutes = hours * 60 + minutes;
+      //}
+      //intervalId = setInterval(() => {
+       // if (totalMinutes === 0) {
+          //stopTimer();
+          //<!-- alert("Time's up!"); -->
+         // return;
+        //}
+        //let hours = Math.floor(totalMinutes / 60);
+        //let minutes = totalMinutes % 60;
+        //timerDisplay.textContent = formatTime(hours) + ":" + formatTime(minutes) + ":" + formatTime(seconds);
+       // totalMinutes--;
+        //remainingMinutes = totalMinutes;
+      //}, 1000);
+      if (remainingSeconds === 0) {
+        totalSeconds = minutes * 60 + seconds;
+      }
+      intervalId = setInterval(() => {
+        if (totalSeconds === 0) {
+          stopTimer();
+          /*alert("Time's up!");*/
+          return;
+        }
+        let minutes = Math.floor(totalSeconds / 60);
+        let seconds = totalSeconds % 60;
+        timerDisplay.textContent = formatTime(minutes) + ":" + formatTime(seconds);
+        totalSeconds--;
+        remainingSeconds = totalSeconds;
+      }, 1000);
+      isTimerRunning=true
+      x.style.display="none"
+      y.style.display="inline"
+    }
+    function stopTimer() {
+      clearInterval(intervalId);
+      isTimerRunning=false
+      x.style.display="inline"
+      y.style.display="none"
+    }
+    function resetTimer() {
+      clearInterval(intervalId);
+      isTimerRunning=false
+      x.style.display="inline"
+      y.style.display="none"
+      timerDisplay.textContent =formatTime(minutesInput.value) + ":" + formatTime(secondsInput.value);
+    }
+    function formatTime(time) {
+      return time.toString().padStart(2, "0");
+    }
+  </script>
+</body>
+</html>
