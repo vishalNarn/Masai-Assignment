@@ -27,26 +27,27 @@
         display(data)
     })
 
+    let tab = document.createElement("table")
+    //let th = document.createComment("thead")
+    //let tb = document.createComment("tbody")
+    let tr1 = document.createElement("tr")
+    let th1 = document.createElement("th")
+    let th2 = document.createElement("th")
+    let th3 = document.createElement("th")
+    let th4 = document.createElement("th")
+    th1.innerText="userId"
+    th2.innerText="id"
+    th3.innerText="title"
+    th4.innerText="status"
+    tab.append(tr1)
+    tr1.append(th1,th2,th3,th4)
+    tab.border="1" 
+    tab.cellSpacing="0"
+    tab.style.margin="auto"
+
     function display(data){
-        let tab = document.createElement("table")
-        let th = document.createComment("thead")
-        let tb = document.createComment("tbody")
-        let tr1 = document.createElement("tr")
-        let th1 = document.createElement("th")
-        let th2 = document.createElement("th")
-        let th3 = document.createElement("th")
-        let th4 = document.createElement("th")
-        th1.innerText="userId"
-        th2.innerText="id"
-        th3.innerText="title"
-        th4.innerText="status"
-        tab.append(th,tb,tr1)
-        tr1.append(th1,th2,th3,th4)
-        tab.border="1" 
-        tab.cellSpacing="0"
-        tab.style.margin="auto"
         data.forEach(function(element){
-            //console.log(element)
+            console.log(element)
             let tr2 = document.createElement("tr")
             let td1 = document.createElement("td")
             let td2 = document.createElement("td")

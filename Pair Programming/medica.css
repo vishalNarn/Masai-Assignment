@@ -54,14 +54,14 @@
 .back{
     background-color:#d0f4fd;
     height: 600px;
-    width: 520px;
+    width: 470px;
     margin-left: 1000px;
     margin-top: -535px;
 }
 
 .back>img{
     width: 100%;
-    height: 90%;
+    height: 100%;
     position: relative;
     top: 100px;
     right: 100px;
